@@ -17,6 +17,7 @@ db(config.db.user, config.db.password, config.db.cluster, config.db.db, function
     routes(router);
     app.use(config.baseURL, router);
     // Serve
+    var port = process.env.PORT || config.port;
     app.listen(config.port);
     console.log('Listening on port: ' + config.port);
 });
